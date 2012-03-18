@@ -16,8 +16,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'mongoid',  '2.0.0.rc.6'
-gem 'bson_ext', '~> 1.2'
+gem "mongoid", "~> 2.2"    
+#gem "bson", "= 1.4.1", :path => "vendor"
+gem "mongo", "~> 1.5.0.rc0"
+gem "bson", "~> 1.5.0.rc0"
+gem "bson_ext", "~> 1.5.0.rc0"  
 gem 'devise'
 gem 'cancan'
 gem 'jquery-rails'
@@ -27,11 +30,9 @@ gem "compass", ">= 0.10.6"
 gem 'haml'
 group :development, :test do
   gem 'capybara'
-  gem 'cucumber'
-  gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'rspec'
   gem 'rspec-rails'
+  gem 'mongoid-rspec'
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'autotest'
@@ -45,6 +46,10 @@ group :development, :test do
   gem 'metrical'
 end
 
+group :test do
+  gem 'cucumber'
+  gem 'cucumber-rails'
+end
 
 
 # To use ActiveModel has_secure_password
