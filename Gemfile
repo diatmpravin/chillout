@@ -39,7 +39,10 @@ group :development, :test do
   gem 'faker'
   gem 'ruby-debug19'
   gem 'haml-rails'
-  gem 'metric_fu'
+  #gem 'metric_fu'
+  #gem 'simplecov', :require => false
+  gem 'rcov', '0.9.11'
+  gem 'metrical'
 end
 
 
