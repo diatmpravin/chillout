@@ -224,7 +224,4 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = Rails.env.test? ? :get : :delete
   
-  #speed up unit test
-  config.stretches = Rails.env.test? ? 1 : 10
-  
 end
