@@ -21,6 +21,7 @@ gem "mongoid", "~> 2.2"
 gem "mongo", "~> 1.5.0.rc0"
 gem "bson", "~> 1.5.0.rc0"
 gem "bson_ext", "~> 1.5.0.rc0"  
+gem "json", "~> 1.6.5"
 gem 'devise'
 gem 'cancan'
 gem 'jquery-rails'

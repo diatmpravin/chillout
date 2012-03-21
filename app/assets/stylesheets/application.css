@@ -1,13 +1,201 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*= require_tree .
 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+
+#header {  	 
+ 	 background: repeat scroll 0 0 transparent;
+	 background-color: #000000;
+	 padding: 10px 0px;
+	 min-height: 25px;
+	 width: 100%;	 
+	 border-bottom: 2px solid #D48F0E;	 
+	 opacity: 0.98;	 
+}
+
+#menu {
+    float: right;
+    margin-top: -10px;
+    position: relative;
+}
+
+#bookTable {
+    background-color: #D48F0E;
+    color: #FFFFFF;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 300px;
+    min-height: 35px;
+    text-align: center;
+    width: 200px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0px 0px 0px 25px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu a {
+	display: block;
+	height: 18px;
+	margin-right: 3px;
+	padding: 12px 20px 0px 20px;
+	background: url("img06.jpg") no-repeat right 10px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FFFFFF;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+}
+
+#menu .current_page_item a {
+	padding-left: 0;
+}
+
+#menu a:hover {
+	text-decoration: none;
+	background-color: #D48F0E;
+	padding: 12px 20px 12px 20px;
+}
+
+#container {
+
+  	margin: 0 auto;  	
+  	padding: 20px 40px;  
+  	min-height: 100%;  
+  	position: relative;  
+}
+
+#footer {
+	background: repeat scroll 0 0 transparent;
+	margin-top: 20px;
+    padding: 0px;    
+    min-height: 70px;
+	width: 100%;
+    opacity: 0.9;	
+    position: relative;
+	bottom: 0;
+}
+
+#footer a {
+	color: #D48F0E;
+	font-weight:bold;
+	font-size:14px;
+}
+#footer p {
+	margin: 0;
+	padding-top: 40px;
+	line-height: normal;
+	font-size: 9px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #D78983;
+}
+
+.footer-links {
+    text-align:center;    
+}
+
+.footer-links ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+.footer-links ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+.footer-links ul li a:visited {
+  color: #09c;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: none;
+}
+
+#copy_right{
+	font-size:12px;
+	text-align: center; 
+	color:#62274B;     
+}
+
+#flash_notice, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+#flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors .message {
+  color: #D00;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.textFieldEffect{
+    background: none repeat scroll 0 0 #CFCFCF;
+    border-color: #A5A5A5;
+    border-style: solid;
+    border-width: 1px;
+    color: #C6C6C6;
+    font-family: Arial;
+    font-size: 15px;
+    height: 25px;
+    width: 470px;
+    background: #F4F4F4;
+}
+
+#textLabel{
+	color: #C6C6C6;
+    font-family: Arial;
+    font-size: 14px;
+	font-weight:bold;
+	border-bottom: 1px solid #BEBEBE;
+}
+
+#textcolor {
+    color: #D59113;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
