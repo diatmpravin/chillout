@@ -144,3 +144,4 @@ end
 Then /^I should see my name$/ do
   page.should have_content valid_user[:name]
 end
+
