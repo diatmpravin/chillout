@@ -4,6 +4,12 @@ def create_visitor
 	@visitor ||= { :name => "Test User", :email => "test@gmail.com", :password => "test1234", :password_confirmation => "test1234"}
 end
 
+def create_user
+  create_visitor
+  delete_user
+  @user = FactoryGirl.create(:user, email: @visitor[:email], name: @visitor[:name], password: @visitor[:password])
+end
+
 def delete_user
 	@user ||= User.first conditions: { :email => @visitor[:email] }
 	@user.destroy unless @user.nil?
@@ -40,8 +46,13 @@ Given /^I am not logged in$/ do
 	visit '/users/sign_out'
 end
 
+Given /^I am logged in$/ do
+  create_user
+  sign_in
+end
+
 Given /^I exist as a user$/ do
-   create_visitor
+   create_user
 end
 
 Given /^I do not exist as a user$/ do
@@ -58,6 +69,17 @@ end
 When /^I sign up with valid user data$/ do
 	create_visitor
    sign_up
+end
+
+When /^I sign out$/ do
+  visit '/users/sign_out'
+end
+
+When /^I edit my account details$/ do
+  click_link "Edit account"
+  fill_in "Name", :with => "newname"
+  fill_in "Current password", :with => @visitor[:password]
+  click_button "Update"
 end
 
 When /^I sign up with a invalid email$/ do
@@ -86,6 +108,20 @@ end
 
 When /^I return to the site$/ do
    visit '/'
+end
+
+When /^I sign in with a wrong email$/ do
+   @visitor = @visitor.merge(:email => "wrong@example.com")
+   sign_in
+end
+
+When /^I sign in with a wrong password$/ do
+  @visitor = @visitor.merge(:password => "wrongpass")
+  sign_in
+end
+
+When /^I look at the list of users$/ do
+  visit '/'
 end
 
 
@@ -124,14 +160,21 @@ Then /^I see a successful sign in message$/ do
    page.should have_content "Signed in successfully."
 end
 
-Then /^I Should be signed in$/ do
+Then /^I should be signed in$/ do
    page.should have_content "Logout"
    page.should_not have_content "Sign up"
    page.should_not have_content "Login"
 end
 
+Then /^I should see a signed out message$/ do
+   page.should have_content "Signed out successfully."
+end
 
+Then /^I should see an account edited message$/ do
+   page.should have_content "You updated your account successfully."
+end
 
-
-
-
+Then /^I should see my name$/ do
+  create_user
+  page.should have_content @user[:name]
+end
