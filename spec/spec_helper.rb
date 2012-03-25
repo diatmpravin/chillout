@@ -44,4 +44,9 @@ RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner.clean
   end
+  
+  RSpec.configure do |config|
+    config.include Devise::TestHelpers, :type => :controller
+  end
+  
 end

@@ -7,6 +7,6 @@ FactoryGirl.define do
 		password 'test1234'
 		password_confirmation 'test1234'
 		#REQUIRED IF THE DEVISE CONFRIMABLE MODEL IS IN USED
-		#confirmed_at Time.now
+		confirmed_at Time.now
 	end
 end
