@@ -1,0 +1,18 @@
+
+require 'spec_helper'
+
+describe BarsController do
+
+  before :each do
+    @bar = FactoryGirl.create(:bar)
+    @user = factroyGirl.create(:user)
+    sign_in @user
+  end
+  
+  describe "GET 'new' bar page" do
+    it "should load new bar creation page" do
+      get :new
+    end
+  end
+  
+end
