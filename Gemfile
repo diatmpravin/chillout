@@ -29,6 +29,8 @@ gem 'passenger'
 gem 'capistrano'
 gem "compass", ">= 0.10.6"
 gem 'haml'
+gem "twitter-bootstrap-rails"
+gem 'activeadmin'
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'

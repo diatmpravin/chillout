@@ -3,18 +3,19 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   #VALIDATIONS
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role
 
   
   ## Database authenticatable
   field :name,                :type => String, :null => false, :default => "" 
   field :email,              :type => String, :null => false, :default => ""
   field :encrypted_password, :type => String, :null => false, :default => ""
+  field :role,   :type => String
 
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -34,10 +35,10 @@ class User
   # field :password_salt, :type => String
 
   ## Confirmable
-  # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
-  # field :confirmation_sent_at, :type => Time
-  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
+   field :confirmation_token,   :type => String
+   field :confirmed_at,         :type => Time
+   field :confirmation_sent_at, :type => Time
+   field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
   ## Lockable
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
@@ -46,4 +47,13 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+  
+  #CALLBACKS
+  after_save :send_mail_to_chillout_team
+  
+  def send_mail_to_chillout_team
+    #raise self.email.inspect
+  end
+  
+  
 end

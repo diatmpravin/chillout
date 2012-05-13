@@ -1,5 +1,14 @@
-<p>Welcome <%= @resource.email %>!</p>
+<p>Dear <%= @resource.name %>!</p>
+
+<p>Here are the login details for your Chillout Account.</p>
+
+<p><b>User Email:</b> <%= @resource.email %></p>
+
+<p><b>Password:</b> <%= @resource.password %></p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<br>
+<p>Best Regards,</p>
+<p>Chillout Team</p>

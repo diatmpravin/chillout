@@ -60,5 +60,25 @@ Chillout::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  #default url for mailer
+  config.action_mailer.default_url_options = { :host => 'chillout.herokuapp.com' }  
+	# ActionMailer Config
+	# Setup for production - deliveries, no errors raised
+	config.action_mailer.delivery_method = :smtp
+	config.action_mailer.perform_deliveries = true
+	config.action_mailer.raise_delivery_errors = false
+	config.action_mailer.default :charset => "utf-8"
+	
+	# mail server settings
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "gmail.com",
+    :authentication => :login,
+    :user_name => 'chillout.whitebelt@gmail.com',
+    :password => 'chillout1234',
+  } 
 
 end
