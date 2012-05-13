@@ -11,4 +11,6 @@
 	puts 'SETTING UP DEFAULT USER LOGIN'
 	user = User.create! :name => 'admin', :email => 'pravinmishra88@gmail.com', :password => 'admin1234', :password_confirmation => 'admin1234', :role => 'admin'
 	puts 'New user created: ' << user.name
+	puts 'SETTING UP AdminUser'
+	AdminUser.create(:email => 'bob@example.com', :password => 'password', :password_confirmation => 'password')
 

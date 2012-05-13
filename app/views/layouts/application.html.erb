@@ -15,10 +15,10 @@
 	</section>
 	<section id="container">
     	<%- flash.each do |name, msg| -%>
-			<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-		<%- end -%>      
+			  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+		  <%- end -%>      
 	
-      	<%= yield %>
+      <%= yield %>
     </section>
 	<section id="footer">
 		<%= render 'shared/footer' %>
