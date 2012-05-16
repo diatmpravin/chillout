@@ -9,6 +9,12 @@ class Service
   field :status, :type => Integer
   field :highest_bid, :type => Integer
   
+  #has_mongoid_attached_file :image,
+  #    :styles => {:thumb => "150x150!"},
+  #    :default_url => '/images/servicelisting-noimage.jpg'
+   
+  attr_accessible :image, :title, :description, :availability, :buy_price, :min_bid_price, :no_of_guest, :status, :highest_bid
+  
   # RELATIONS
 	belongs_to :bar
   

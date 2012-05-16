@@ -23,7 +23,7 @@
     = f.number_field :min_bid_price
   .field
     = f.label :no_of_guest
-    = f.number_field :no_of_guest
+    = f.select :no_of_guest, options_for_select([[1, 1], [2, 2],[3, 3], [4, 4],[5, 5], [6, 6]])
   .field
     = f.label :status
     = f.number_field :status

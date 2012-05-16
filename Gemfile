@@ -36,6 +36,11 @@ gem 'activeadmin'
 gem "client_side_validations", "~> 3.2.0.beta.1"
 gem 'client_side_validations-mongoid'
 
+#FILE UPLOAD
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem "aws-s3",            :require => "aws/s3"
+
+
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
