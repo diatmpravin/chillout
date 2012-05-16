@@ -5,5 +5,7 @@ class Bar
   field :phone, :type => Integer
   field :city, :type => String
   field :website, :type => String
-  field :address, :type => String
+  field :addess, :type => String
+  
+  validates_presence_of :name, :owner, :phone, :city, :addess
 end

@@ -1,0 +1,29 @@
+%h1 Listing bars
+
+%table
+  %tr
+    %th Name
+    %th Owner
+    %th Phone
+    %th City
+    %th Website
+    %th Addess
+    %th
+    %th
+    %th
+
+  - @bars.each do |bar|
+    %tr
+      %td= bar.name
+      %td= bar.owner
+      %td= bar.phone
+      %td= bar.city
+      %td= bar.website
+      %td= bar.addess
+      %td= link_to 'Show', bar
+      %td= link_to 'Edit', edit_bar_path(bar)
+      %td= link_to 'Destroy', bar, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Bar', new_bar_path
