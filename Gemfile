@@ -34,7 +34,7 @@ gem 'activeadmin'
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.0.0.beta.18'
   gem 'mongoid-rspec'
   gem 'shoulda'
   gem 'factory_girl_rails'
