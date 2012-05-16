@@ -1,5 +1,7 @@
 Chillout::Application.routes.draw do
   
+  resources :services
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

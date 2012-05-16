@@ -7,5 +7,9 @@ class Bar
   field :website, :type => String
   field :addess, :type => String
   
+  # RELATIONS
+	belongs_to :user
+	has_many :services
+	
   validates_presence_of :name, :owner, :phone, :city, :addess
 end
