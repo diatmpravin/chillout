@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @service.title
+%p
+  %b Description:
+  = @service.description
+%p
+  %b Availability:
+  = @service.availability
+%p
+  %b Buy price:
+  = @service.buy_price
+%p
+  %b Min bid price:
+  = @service.min_bid_price
+%p
+  %b No of guest:
+  = @service.no_of_guest
+%p
+  %b Status:
+  = @service.status
+%p
+  %b Highest bid:
+  = @service.highest_bid
+
+= link_to 'Edit', edit_service_path(@service)
+\|
+= link_to 'Back', services_path

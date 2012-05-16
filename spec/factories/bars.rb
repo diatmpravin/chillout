@@ -7,6 +7,6 @@ FactoryGirl.define do
     phone 1
     city "MyString"
     website "MyString"
-    address "MyText"
+    addess "MyString"
   end
 end

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @bar.name
+%p
+  %b Owner:
+  = @bar.owner
+%p
+  %b Phone:
+  = @bar.phone
+%p
+  %b City:
+  = @bar.city
+%p
+  %b Website:
+  = @bar.website
+%p
+  %b Addess:
+  = @bar.address
+
+= link_to 'Edit', edit_bar_path(@bar)
+\|
+= link_to 'Back', bars_path

@@ -6,4 +6,10 @@ class Bar
   field :city, :type => String
   field :website, :type => String
   field :address, :type => String
+  
+  # RELATIONS
+	belongs_to :user
+	has_many :services
+	
+  validates_presence_of :name, :owner, :phone, :city, :address
 end

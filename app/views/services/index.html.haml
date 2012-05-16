@@ -1,0 +1,33 @@
+%h1 Listing services
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Availability
+    %th Buy price
+    %th Min bid price
+    %th No of guest
+    %th Status
+    %th Highest bid
+    %th
+    %th
+    %th
+
+  - @services.each do |service|
+    %tr
+      %td= service.title
+      %td= service.description
+      %td= service.availability
+      %td= service.buy_price
+      %td= service.min_bid_price
+      %td= service.no_of_guest
+      %td= service.status
+      %td= service.highest_bid
+      %td= link_to 'Show', service
+      %td= link_to 'Edit', edit_service_path(service)
+      %td= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Service', new_service_path

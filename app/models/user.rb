@@ -48,6 +48,9 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
   
+  # RELATIONS
+	has_many :bars
+  
   #CALLBACKS
   after_save :send_mail_to_chillout_team
   
