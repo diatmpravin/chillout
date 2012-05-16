@@ -5,11 +5,11 @@ class Bar
   field :phone, :type => Integer
   field :city, :type => String
   field :website, :type => String
-  field :addess, :type => String
+  field :address, :type => String
   
   # RELATIONS
 	belongs_to :user
 	has_many :services
 	
-  validates_presence_of :name, :owner, :phone, :city, :addess
+  validates_presence_of :name, :owner, :phone, :city, :address
 end
