@@ -69,6 +69,10 @@ GEM
     childprocess (0.3.2)
       ffi (~> 1.0.6)
     chunky_png (1.2.5)
+    client_side_validations (3.2.0.beta.3)
+    client_side_validations-mongoid (2.4.0.beta.2)
+      client_side_validations (~> 3.2.0.beta.1)
+      mongoid (~> 2.4.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -295,6 +299,8 @@ DEPENDENCIES
   cancan
   capistrano
   capybara
+  client_side_validations (~> 3.2.0.beta.1)
+  client_side_validations-mongoid
   coffee-rails (~> 3.2.1)
   compass (>= 0.10.6)
   cucumber

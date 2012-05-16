@@ -31,6 +31,11 @@ gem "compass", ">= 0.10.6"
 gem 'haml'
 gem "twitter-bootstrap-rails"
 gem 'activeadmin'
+
+#CLIENT SIDE VALIDATIONS
+gem "client_side_validations", "~> 3.2.0.beta.1"
+gem 'client_side_validations-mongoid'
+
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
