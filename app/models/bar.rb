@@ -12,7 +12,7 @@ class Bar
   
   # RELATIONS
 	belongs_to :user
-	has_many :services
+	has_many :services, dependent: :delete
 	  
   #VALIDATIONS
 	validates_presence_of :name, :message => 'Please provide name to your bar!'

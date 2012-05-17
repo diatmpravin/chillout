@@ -1,5 +1,6 @@
-class ServicesController < InheritedResources::Base
+class ServicesController < ApplicationController
 	before_filter :authenticate_user!, :except => [:index]
+  before_filter :collect_current_user_bars, :only => [:new]
   
 	def index
 		@services = Service.all
@@ -19,35 +20,32 @@ class ServicesController < InheritedResources::Base
 	end
 
 	def create
-		@service = Service.new(params[:Service])
-
-		respond_to do |format|
-			if @service.save
-				format.html { redirect_to @service, notice: 'Service was successfully created.' }
-				format.json { render json: @service, status: :created, location: @service }
-			else
-				format.html { render action: "new" }
-				format.json { render json: @service.errors, status: :unprocessable_entity }
-			end
+		@service = Service.new(params[:service])
+		if @service.save
+			redirect_to @service, notice: 'Service was successfully created.'
+		else
+			render action: "new"
 		end
 	end
 
 	def update
 		@service = Service.find(params[:id])
-
-		respond_to do |format|
-			if @service.update_attributes(params[:Service])
-				format.html { redirect_to @service, notice: 'Service was successfully updated.' }
-				format.json { head :no_content }
-			else
-				format.html { render action: "edit" }
-				format.json { render json: @service.errors, status: :unprocessable_entity }
-			end
+		if @service.update_attributes(params[:Service])
+			redirect_to @service, notice: 'Service was successfully updated.'
+		else
+			render action: "edit"
 		end
 	end
 
 	def destroy
 		@service = Service.find(params[:id])
 		@service.destroy
+		redirect_to services_path
+	end
+	
+	protected
+	
+	def collect_current_user_bars
+	  @current_user_bars ||= current_user.bars
 	end
 end

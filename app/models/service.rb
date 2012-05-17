@@ -3,8 +3,11 @@ class Service
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
   include Mongoid::Paperclip
-  include ActiveAdmin::Mongoid::Patches
+  
+  #CALLBACKS
+  #before_create :collect_current_user_bars
 
+  field :bar_id, :type => String
   field :title, :type => String
   field :description, :type => String
   field :availability, :type => Date
@@ -18,7 +21,7 @@ class Service
       :styles => {:thumb => "150x150!"},
       :default_url => '/images/servicelisting-noimage.jpg'
    
-      attr_accessible :image, :title, :description, :availability, :buy_price, :min_bid_price, :no_of_guest, :status, :highest_bid
+      attr_accessible :image, :bar_id,:title, :description, :availability, :buy_price, :min_bid_price, :no_of_guest, :status, :highest_bid
   
   # RELATIONS
 	belongs_to :bar
@@ -29,4 +32,10 @@ class Service
 	validates_presence_of :buy_price, :message => 'Please list buy price of service'
 	validates_presence_of :min_bid_price, :message => 'What will be the minmum bid of servie'
 	validates_presence_of :status, :message => 'Is servie active?'
+	
+	protected
+	
+	def collect_current_user_bars
+	  raise self.bar_name.inspect
+	end
 end

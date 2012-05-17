@@ -49,10 +49,12 @@ class User
   # field :authentication_token, :type => String
   
   # RELATIONS
-	has_many :bars
+	has_many :bars, dependent: :delete
   
   #CALLBACKS
   after_save :send_mail_to_chillout_team
+  
+  protected
   
   def send_mail_to_chillout_team
     #raise self.email.inspect

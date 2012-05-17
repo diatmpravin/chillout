@@ -30,7 +30,7 @@ gem 'capistrano'
 gem "compass", ">= 0.10.6"
 gem 'haml'
 gem "twitter-bootstrap-rails"
-gem 'activeadmin'
+#gem 'activeadmin'
 
 #CLIENT SIDE VALIDATIONS
 gem "client_side_validations", "~> 3.2.0.beta.1"
