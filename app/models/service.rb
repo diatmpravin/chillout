@@ -3,6 +3,7 @@ class Service
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
   include Mongoid::Paperclip
+  include ActiveAdmin::Mongoid::Patches
 
   field :title, :type => String
   field :description, :type => String
