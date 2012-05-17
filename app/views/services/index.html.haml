@@ -1,5 +1,5 @@
-%h1 Listing services
-
+#textcolor LIST OF YOUR TABLE SERVICE!
+%hr
 %table
   %tr
     %th Title
@@ -9,7 +9,7 @@
     %th Min bid price
     %th No of guest
     %th Status
-    %th Highest bid
+    %th image
     %th
     %th
     %th
@@ -23,7 +23,7 @@
       %td= service.min_bid_price
       %td= service.no_of_guest
       %td= service.status
-      %td= service.highest_bid
+      %td= image_tag service.image.url, :size => "110x110"
       %td= link_to 'Show', service
       %td= link_to 'Edit', edit_service_path(service)
       %td= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete

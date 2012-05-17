@@ -22,8 +22,8 @@
   %b Status:
   = @service.status
 %p
-  %b Highest bid:
-  = @service.highest_bid
+  %b Image:
+  =image_tag @service.image.url, :size => "110x110"
 
 = link_to 'Edit', edit_service_path(@service)
 \|

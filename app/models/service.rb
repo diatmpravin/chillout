@@ -1,5 +1,9 @@
 class Service
   include Mongoid::Document
+  include Mongoid::Timestamps::Created
+  include Mongoid::Timestamps::Updated
+  include Mongoid::Paperclip
+
   field :title, :type => String
   field :description, :type => String
   field :availability, :type => Date
@@ -9,11 +13,11 @@ class Service
   field :status, :type => Integer
   field :highest_bid, :type => Integer
   
-  #has_mongoid_attached_file :image,
-  #    :styles => {:thumb => "150x150!"},
-  #    :default_url => '/images/servicelisting-noimage.jpg'
+  has_mongoid_attached_file :image,
+      :styles => {:thumb => "150x150!"},
+      :default_url => '/images/servicelisting-noimage.jpg'
    
-  attr_accessible :image, :title, :description, :availability, :buy_price, :min_bid_price, :no_of_guest, :status, :highest_bid
+      attr_accessible :image, :title, :description, :availability, :buy_price, :min_bid_price, :no_of_guest, :status, :highest_bid
   
   # RELATIONS
 	belongs_to :bar
