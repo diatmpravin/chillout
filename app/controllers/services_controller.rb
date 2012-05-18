@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
   before_filter :collect_current_user_bars, :only => [:new]
   
 	def index
-		@services = Service.all
+		@services = Service.order_by([[:updated_at, :desc]])
 	end
 
 	def show

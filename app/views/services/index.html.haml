@@ -1,35 +1,31 @@
 #textcolor LIST OF YOUR TABLE SERVICE!
 %hr
 %table
+- @services.each do |service|
   %tr
-    %th Title
-    %th Description
-    %th Availability
-    %th Buy price
-    %th bar_id
-    %th Min bid price
-    %th No of guest
-    %th Status
-    %th image
-    %th
-    %th
-    %th
-
-  - @services.each do |service|
-    %tr
-      %td= service.title
-      %td= service.description
-      %td= service.availability
-      %td= service.buy_price
-      %td= service.bar_id
-      %td= service.min_bid_price
-      %td= service.no_of_guest
-      %td= service.status
-      %td= image_tag service.image.url, :size => "110x110"
-      %td= link_to 'Show', service
-      %td= link_to 'Edit', edit_service_path(service)
-      %td= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Service', new_service_path
+    %td
+    %h2= service.title
+  %tr
+    %table
+      %tr
+        %td= image_tag service.image.url, :size => "110x110"
+        %td
+          %table
+            %tr
+              %hr
+              %td= service.bar
+            %tr
+              %td= link_to "Details", services_path
+              %td= link_to "Map", services_path
+            %tr
+              %td Expires In
+              %td= service.availability
+            %tr
+              %td Bid:
+              %td= service.min_bid_price
+            %tr
+              %td Buy Now:
+              %td= service.buy_price
+                
+                
+= link_to "New Service", new_service_path                
